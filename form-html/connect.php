@@ -14,7 +14,7 @@
         die('Error connecting to database : ' . $connect->error);
     }else{
         $masukkan = $connect->prepare("Insert into registrations(first_name,last_name,nim,email,gender,password)values(?,?,?,?,?,?)");
-        $masukkan->bind_param('ssssss',$first_name,$last_name,$nim,$email,$gender,$password);
+        $masukkan->bind_param('ssssss',$first_name,$last_name,$nim,$email,$gender,$hashed_password);
         $masukkan->execute();
         echo "Registration Succesfully";
         $masukkan->close();
