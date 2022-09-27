@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media HTML</title>
+</head>
+<body>
+    <h1>Mencoba Embed Video</h1>
+    <video id="myVideo">
+        <source src="/assets/satru2.mp4" type="video/mp4">
+    </video>
+    <p>
+        <button type="button" onclick="playVid()">Play</button>
+        <button type="button" onclick="pauseVid()">Pause</button>
+        <button type="button" onclick="duration()">Duration</button>
+        <button type="button" onclick="controls_on()">Control On</button>
+        <button type="button" onclick="controls_off()">Control Off</button>
+    </p>
+</body>
+<script>
+    var video = document.getElementById("myVideo");
+
+    function playVid(){
+        video.play();
+    }
+    function pauseVid(){
+        video.pause();
+    }
+    function duration(){
+        alert(video.duration);
+    }
+    function controls_on(){
+        video.controls = true;
+    }
+    function controls_off(){
+        video.controls = false;
+    }
+</script>
+</html>
