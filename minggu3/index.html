@@ -7,9 +7,11 @@
     <title>Media HTML</title>
 </head>
 <body>
-    <h1>Mencoba Embed Video</h1>
+    <h1>HTML Video & Subtitles</h1>
     <video id="myVideo">
         <source src="/assets/satru2.mp4" type="video/mp4">
+        <track src="/assets/satru2.vtt" kind="subtitles" srclang="id" label="Indonesia">
+        <track src="/assets/satruenglish.vtt" kind="subtitles" srclang="en" label="English">
     </video>
     <p>
         <button type="button" onclick="playVid()">Play</button>
