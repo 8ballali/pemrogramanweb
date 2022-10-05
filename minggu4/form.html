@@ -10,14 +10,14 @@
 
 <body>
     <h1>Form - HTML 5</h1>
-    <form action="proses.php" method="post" name="fmhs">
+    <form action="proses.php" method="post" name="fmhs" enctype="multipart/form-data">
         <table width="60%" border="1">
             <tr>
                 <td width="30%">
                     Nim
                 </td>
                 <td>
-                    <input type="number" name="fnim" required>
+                    <input type="text" name="fnim" required>
                 </td>
             </tr>
             <tr>
@@ -41,18 +41,26 @@
                 <td>
                     <select name="fprodi" id="">
                         <option value="">Pilih</option>
-                        <option value="11">Teknik Informatika - S1</option>
-                        <option value="12">Sistem Informasi - S1</option>
-                        <option value="22">Teknik Informatika - D3</option>
+                        <option value="Teknik Informatika S1 - 11">Teknik Informatika - S1</option>
+                        <option value="Sistem Informasi S1 - 12">Sistem Informasi - S1</option>
+                        <option value="Teknik Informatika D3 - 22">Teknik Informatika - D3</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>Bidang Minat</td>
                 <td>
-                    <input type="checkbox" name="fminat1" value="01"><label>Web Programming</label>
-                    <input type="checkbox" name="fminat2" value="02"><label>Mobile Programming</label>
-                    <input type="checkbox" name="fminat3" value="03"><label>Data Science</label>
+                    <input type="checkbox" name="fminat[]" value="web_programming"><label>Web Programming</label>
+                    <input type="checkbox" name="fminat[]" value="mobile_programming"><label>Mobile Programming</label>
+                    <input type="checkbox" name="fminat[]" value="data_science"><label>Data Science</label>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%">
+                    Secret Code
+                </td>
+                <td>
+                    <input type="password" name="secret_code" required>
                 </td>
             </tr>
             <tr>

@@ -1,5 +1,9 @@
 <?php
 
+    $server_name = "localhost";
+    $username = "root";
+    $dbname = "mahasiswa";
+
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $nim = $_POST['nim'];
@@ -9,7 +13,7 @@
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     //Database Connection
-    $connect = new mysqli('localhost','root','','mahasiswa');
+    $connect = new mysqli($server_name,$username,'',$dbname);
     if ($connect->error) {
         die('Error connecting to database : ' . $connect->error);
     }else{
