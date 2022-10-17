@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>About me</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cv.pfd">Download CV</a>
+        <a href="contact.html">Contact</a>
+        <a href="tentang.html">About me</a>
+    </nav>
+
+    <hr />
+    <article>
+        <h1>Tentang Saya</h1>
+        <p>
+            Hi, Saya adalah seorang Web Developer.html
+            saat ini sedang belajar HTML
+        </p>
+        <p>
+            Saya masih baru dalam web development, karena itu saya tidak akan pernah berhenti belajar.
+        </p>
+        <p>
+            Saya ingin menguasai HTML CSS dan JavaScript.
+            Simak Video tentang saya
+        </p>
+
+        <video id="videoSaya">
+            <source src="video/satru2.mp4" type="video/mp4">
+            <track src="video/satru2.vtt" kind="subtitles" srclang="id" label="Indonesia">
+            <track src="video/satruenglish.vtt" kind="subtitles" srclang="en" label="English">
+        </video>
+
+        <p>
+            <button type="button" onclick="playVideo()">Play</button>
+            <button type="button" onclick="pauseVideo()">Pause</button>
+            <button type="button" onclick="duration()">Duration</button>
+            <button type="button" onclick="control_on()">Control On</button>
+            <button type="button" onclick="control_off()">Control Off</button>
+        </p>
+    </article>
+    <hr>
+    <footer style="text-align:center">
+        <p>Copyright &copy; 2022 Iqbal</p>
+    </footer>
+</body>
+<script>
+    var video = document.getElementById("videoSaya");
+
+    function playVideo() {
+        video.play()
+    }
+
+    function pauseVideo() {
+        video.pause()
+    }
+
+    function control_on() {
+        video.controls = true;
+    }
+
+    function control_off() {
+        video.controls = false;
+    }
+
+    function duration() {
+        alert(video.duration)
+    }
+</script>
+
+</html>
