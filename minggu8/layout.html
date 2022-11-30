@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="latihan Semantic HTML">
+    <meta name="author" content="Iqbal">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Semantic Layout">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="style/style.css"> -->
+    <title>Semantic Element - HTML 5</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        header{
+            border: 1px solid blue;
+            padding: 25px;
+        }
+        .row:after{
+            content:"";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"]{
+            float: left;
+            padding: 10px;
+            border: 1px solid blue;
+
+        }
+        .col-1{width: 8.33%;}
+        .col-2{width: 16.66%;}
+        .col-3{width: 25%;}
+        .col-4{width: 33.33%;}
+        .col-5{width: 41.66%;}
+        .col-6{width: 50%;}
+        .col-7{width: 58.33%;}
+        .col-8{width: 66.66%;}
+        .col-9{width: 75%;}
+        .col-10{width: 83.33%;}
+        .col-11{width: 91.66%;}
+        .col-12{width: 90%;}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+          }
+          
+          li {
+            float: left;
+          }
+          
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          
+          li a:hover {
+            background-color: #111;
+          }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Judul Halaman / Header</h2>
+    </header>
+    <main>
+        <nav>
+            <ul class="col-12">
+                <li><a href="#">Menu 1</a></li>
+                <li><a href="#">Menu 2</a></li>
+                <li><a href="#">Menu 3</a></li>
+                <li><a href="#">Menu 4</a></li>
+
+            </ul>
+        </nav>
+        <article class="col-12">
+            <h4>Judul Isi</h4>
+            <p>Geger Pacinan (juga dikenal sebagai Tragedi Angke; dalam bahasa Belanda: Chinezenmoord, yang berarti
+                "Pembunuhan orang Tionghoa") merupakan sebuah pogrom terhadap orang keturunan Tionghoa di kota pelabuhan
+                Batavia, Hindia-Belanda (sekarang Jakarta). Kekerasan dalam batas kota berlangsung dari 9 Oktober hingga
+                22
+                Oktober 1740 dan berbagai pertempuran kecil terjadi hingga akhir November tahun yang sama</p>
+        </article>
+    </main>
+    <footer class="col-12">Copyright <i>&copy;</i>pbw2022
+    </footer>
+</body>
+
+</html>

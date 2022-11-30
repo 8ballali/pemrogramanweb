@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JavaScript</title>
+</head>
+
+<body>
+    <h1>JavaScript</h1>
+    <form name="form_hitung">
+        bil 1 <input name="bil1" type="number">
+        opr
+        <select name="opr" id="">
+            <option value="+" >+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br>
+        bil 2 <input type="number" name="bil2"> <br>
+        <input type="button" value="=" onclick="hitung()">
+        <input type="number" name="hasil" disabled>
+    </form>
+    <script>
+       function hitung() {
+        var form = document.form_hitung;
+        var x = eval(form.bil1.value);
+        var y = eval(form.bil2.value);
+        var opr = form.opr.value;
+        if(opr == "+"){
+            var result = x+y;
+        }else if(opr == "-"){
+            var result = x-y;
+        }else if(opr == "*"){
+            var result = x*y;
+        }else if(opr == "/"){
+            var result = x/y;
+        }
+        form.hasil.value = result;
+        
+       }
+
+    </script>
+</body>
+
+</html>
