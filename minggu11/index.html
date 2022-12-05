@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <form onsubmit="jumlah()" action="" method="post">
-        <input type="text" placeholder="Input Nama MHS" id="tambahMhs">
-        <input type="submit" value="+">
-    </form>
-    <div id="jumlah">
-        
-    </div>
-    <table border="1">
-        <thead>
-            <tr><td>Data Mawapres 2023</td></tr>
-        </thead>
-        <tbody id="daftar_nama">
-            <tr><td></td></tr>
-        </tbody>
-    </table>
-    <script>
-        var app = new function(){
-            this.mhs = ["Joni", "Jini", "Jane"]
-            this.dt = document.getElementById("daftar_nama");
 
-            this.barisAll = function(){
-                var data = '';
-                if(this.mhs.length > 0){
-                    for(i=0; i < this.mhs.length; i++){
-                            data += '<tr>';
-                            data += '<td>' + this.mhs[i] + '</td>'
-                            data += '</tr>'
-                        }
-                    }
-                    this.count = (this.mhs.length);
-                    return this.dt.innerHTML = data;
-                };
-              this.count = function(data){
-                var el = document.getElementById("jumlah");
-                if(data){
-                    el.innerHTML = 'Jumlah : ' + data + ''
-                }
-              }
-            }
-            app.barisAll();
+<body>
+    <h1>Add & Remove Item List</h1>
+    <form>
+        <input type="text" name="text" id="txt" required>
+        <button type="submit" class="btn-list">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+        </button>
+    </form>
+    <div class="container">
+        <ul>
             
+        </ul>
+    </div>
+
+    <script>
+        const inputText = document.querySelector('#txt');
+        const myButton = document.querySelector('.btn-list');
+        const list = document.querySelector('.container ul');
+        myButton.addEventListener('click', (e) =>{
+            if(inputText.value != ""){
+                e.preventDefault();
+                //membuat li
+                const myLi = document.createElement('li');
+                myLi.innerHTML = inputText.value;
+                list.appendChild(myLi);
+                //membuat span
+                const mySpan = document.createElement('span');
+                mySpan.innerHTML = 'X';
+                myLi.appendChild(mySpan);
+            }
+            const close = document.querySelectorAll('span');
+            for(let i=0; i<close.length; i++){
+                close[i].addEventListener('click',()=>{
+                    close[i].parentElement.style.opacity = 0;
+                    setTimeout(()=>{
+                        close[i].parentElement.style.display = 'none';
+                        close[i].parentElement.remove();
+
+                    }, 500);
+                })
+            }
+            inputText.value = "";
+        });
     </script>
 </body>
+
 </html>
